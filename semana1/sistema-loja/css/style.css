@@ -1,0 +1,78 @@
+@import url('https://fonts.google.com/specimen/PT+Sans+Narrow?preview.text=MARQS%20PRESENTES&preview.text_type=custom#standard-styles');
+
+* { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body { 
+    background-color: #EDEDF5;
+    font-family: 'PT Sans Narrow', Arial;
+}
+
+.menu 
+{ 
+    background-color: #fff;
+    width: 100%; 
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.menu a 
+{
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2%;
+}
+
+.empresa, .detalhes 
+{
+    text-align: center;
+}
+
+.empresa 
+{ 
+    margin-top: 48px;
+    text-align: center;
+    color: #000;
+}
+
+.detalhes 
+{
+    padding: 100px 0px;
+}
+
+.footer 
+{
+    position: fixed;
+    width: 100%;
+    height: 300px;
+    background-color: #000a1f ;
+    color: #fff;
+    padding: 30px;
+}
+
+.footer p 
+{
+    float: left;
+    display: inline;
+    text-align: center;
+    margin-left: 30px;
+    /* width: 100px;
+    margin: auto; */
+}
+
+.footer div.social 
+{
+    float: right;
+    display: inline;
+    
+    margin-right: 30px;
+}
+
+.footer div.social p 
+{
+    margin-right: 25px;
+}
