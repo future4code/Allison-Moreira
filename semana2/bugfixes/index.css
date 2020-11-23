@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Roboto';
+}
+
 .txt-center {
     text-align: center;
 }
