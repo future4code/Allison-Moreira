@@ -120,7 +120,16 @@ td button {
     color: black;
 }
 
-img.item-img { width: 60px; }
+td button:hover {
+    background-color: #c0a21a;
+    color: #fff;
+}
+
+img.item-img { 
+    width: 60px; 
+    background-color: transparent; 
+}
+
 
 .container-do-search {
     margin-top: 20px;
