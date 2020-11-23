@@ -8,32 +8,62 @@ body
     color: #0f1b61;
 }
 
-.reset 
-{ 
-    list-style: none; 
-    margin: 0;
-    top: 0;
-    transform: translateX(0%);
-}
+/*
+***
+**  ---- >> -- >> Adicionais
+***
+*/
 
-.dot { color: #73bbc5;}
+
+.dot { color: #73bbc5; }
+.ml-10 { margin-left: 10px;}
+.mt-30 { margin-top: 30px;}
+.pl-30 { padding-left: 30px;}
+.border-left { border-left: 3px solid #0f1b61;  }
+
+/*
+***
+**  ---- >> -- >> Main, tag principal
+***
+*/
 
 main 
 {
     background-color: #e4e9ec;
-    margin: 10px;
+    padding-top: 25px;
 }
 
-main div { padding: 30px; }
-
-.container 
+main div.container 
 {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 98%;
+    margin: 10px;
+    padding: 30px;  
+    position: absolute; 
 }
 
-.container div { display: inline-block;}
+/*
+***
+**  ---- >> -- >> BLOCO, utilizado para deixar lado a lado as divs.
+***
+*/
+
+.bloco
+{
+    float:left; 
+    width: 48.999%; 
+    height:300px;
+}
+
+.bloco ul 
+{
+    list-style: none;
+}
+
+/*
+***
+**  ---- >> -- >> Meu Perfil
+***
+*/
 
 .myprofile 
 {
@@ -46,17 +76,30 @@ main div { padding: 30px; }
     font-size: 38px;
 }
 
+/*
+***
+**  ---- >> -- >> Foto do Perfil / Incluindo social e Hr
+***
+*/
+
 .photo-profile {  border: 10px solid #73bbc5; }
 
 .photo-profile, .social, hr
 { 
-    position: relative;
-    top: 25%;
-    transform: translateY(-50%);
-    transform: translateX(50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width:40%;
     border-radius: 50%; 
     margin-top: 8px;
 }
+
+/*
+***
+**  ---- >> -- >> SOCIAL (Icones)
+***
+*/
 
 .social li, i
 {
@@ -71,6 +114,144 @@ main div { padding: 30px; }
     color: #000;
 }
 
-.menu ul {font-size: 15px; text-align:center; }
-.menu ul li {display: inline-block; }
-.menu ul li a {margin: 20px;}
+
+/*
+***
+**  ---- >> -- >> MENU
+***
+*/
+
+.nav
+{ 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0f1b61;
+    border-bottom: 2px solid #0f1b61;
+}
+
+.nav ul 
+{
+    text-align:center; 
+    padding: 10px 0px;
+}
+
+.nav ul li 
+{
+    display: inline-block; 
+}
+
+.nav ul li a 
+{
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav ul li :hover
+{
+    color: #73bbc5;
+    border-bottom: 2px solid #73bbc5;
+}
+
+/*
+***
+**  ---- >> -- >> portifolio
+***
+*/
+
+.portfolio div 
+{
+    display: block;
+    width: 33.333%;
+    height: 150px;
+    margin-top: 35px;
+}
+
+.portfolio div img { width: 200%;}
+
+.item1, .item2, .item3, .item4 { margin-bottom: 15px;}
+
+.item1
+{
+    border-bottom: 4px solid orange;
+    width: 40%;
+}
+
+.item2
+{
+    border-bottom: 4px solid green;
+    width: 17%;
+}
+
+.item3
+{
+    border-bottom: 4px solid orchid;
+    width: 30%;
+}
+
+.item4
+{
+    border-bottom: 4px solid red;
+    width: 5%;
+}
+
+/*
+***
+**  ---- >> -- >> form
+***
+*/
+
+form { width: 40%; }
+
+.form 
+{
+    width: 100%;
+}
+
+.form-div
+{
+    display: inline-block;
+    width: 49%;
+}
+.form img 
+{ 
+    width: 580px;
+}
+
+.form-group
+{
+    margin-bottom: 10px;
+}
+
+.form-control, .btn
+{
+    height: 32px;
+    width: 309px;
+}
+
+.message 
+{
+    margin: 0px;
+    height: 124px;
+}
+
+label
+{
+    display: block;
+    padding-bottom: 7px;
+}
+
+.btn 
+{
+    background: #0f1b61;
+    border-color: #0f1b61;
+    color: #ffffff;
+    font-size: 14px;
+    height: 50px;
+    padding: 0 20px;
+}
