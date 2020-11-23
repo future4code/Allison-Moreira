@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+.txt-center {
+    text-align: center;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
