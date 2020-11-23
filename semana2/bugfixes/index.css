@@ -116,6 +116,11 @@ table {
     width: 60%;
 }
 
+.centralizar {
+    position: relative;
+    margin: 0 auto;
+}
+
 td button {
     background-color: #fadf63;
     width: 150px;
