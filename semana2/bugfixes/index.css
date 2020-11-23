@@ -150,3 +150,8 @@ img.item-img {
 #back-button:hover {
     background-color: #635a3d
 }
+
+.search {
+    border: none;
+    border-bottom: 3px solid #c44f00;
+}
