@@ -1,32 +1,41 @@
-body {
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 div {
-    border: 1px solid black;
-}
-
-.item {
     display: flex;
-    flex-flow: row wrap;
-    flex-direction: row;
-    justify-content: center;  
-    align-items: center;
+    flex-direction: column;
 }
 
-.items-card { 
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    width: 400px; 
-    height: 100px ; 
-    margin: 10px;
-}
-
-#first-block {
+#first-block { 
     background-color: red;
-    height: 60px;
+    height: 70px;
+}
+
+.color-container 
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.color1, .color2, .color3, .color4 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.blue-block, .yellow-block, .green-block, .white-block  {
+    width: 33.333%;
+    height: 100px;
+    margin: 5px;
+    /* aplicando display flex para centralizar o texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
 }
 
 .blue-block {
@@ -44,33 +53,47 @@ div {
 .black-block {
     background-color: black;
     color: white;
-    width: 610px; 
-    height: 150px;
-    margin: 10px;
+    width: 50%;
+    height: 200px;
+    margin: 3px;
+    /* aplicando display flex para centralizar o texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .white-block {
     background-color: white;
 }
 
-/* 
-*** mobile
-*/
-@media Only screen and (max-width: 847px) {
-    .items-card { 
-        flex-basis: 100%;
+@media Only screen and (max-width: 860px) {
+
+    .color1, .color2, .color3, .color4 {
+        flex-flow: row wrap;
+        width: 100%;
     }
+    
+    .green-block, .blue-block, .yellow-block, .black-block, .white-block { 
+        width: 100%; 
+    }
+
 }
 
-@media (min-width: 848px) and (max-width: 1269px) { 
-    .width-item { 
-        display: flex;
-        flex-basis: 825px;
+@media (min-width: 861px) and (max-width: 1269px) {
+
+    .green-block, .no-block { 
+        margin: 5px;
+        flex: 1 1 50%;
     }
 
-    .black-block {
-        display: flex;
-        flex-basis: 400px;
-        border: 3px solid red;
+    .blue-block, .yellow-block, .black-block, .width-block{
+        margin: 5px;
+        flex: 1 1 25%;
+    }
+
+    .color1, .color2, .color3, .color4 {
+        flex-flow: row wrap;
+        width: 100%;
+        margin: 0;
     }
 }
