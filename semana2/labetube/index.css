@@ -11,46 +11,63 @@ body {
 
 header {
     width: 100%;
-    background-color: yellow;
-    display: flex;
+    background-color: greenyellow;
 }
 
 nav {
     width: 100%;
-    padding: 20px 150px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    padding: 10px 0;
 }
 
-nav ul li {
-    font-size: 22px;
+nav ul li {    
     display: flex;
     flex: 1;
+    justify-content: center;
     align-items: center;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: #000;
     text-decoration: none;
-    font-size: 32px;
 }
 
-.search {
+
+.item{
     display: flex;
-    justify-content: flex-end;
+    flex: 1;
+    flex-direction: row;
 }
 
-.search input {
+nav ul li input {
     padding: 0 20px;
     height: 50px;
-    width: 300px;
     background-color: aliceblue;
     border: none;
+    box-shadow: 0 0 1px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.6);
 }
 
+/* 
+    div h1
+*/
+
+h1 { 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+
+/* 
+BOTÕES 
+*/
 .btn-white {
     border: none;
     display: inline-block;
@@ -63,58 +80,62 @@ nav ul li a {
     transition: all .2s ease;
 }
 
-
-/* 
-    div h1
-*/
-
-h1 { 
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 50px;
+.btn-green {
+    background-color: greenyellow;
+    color: #000;
+    transition: all .2s ease;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    width: 50%;
     position: relative;
-  }
-
-  h1:before,
-  h1:after {
-    content: "";
-    width: 70%;
-    height: 4px;
-    background: #000;
-    position: absolute;
-    top: 50%;
+    top: -15px;
     left: 0;
-  }
-
-
-/* 
-    main
-*/
-main {
-    display: flex;
-    flex-flow: wrap column;
-    margin-top: 60px;
-    width: 100%;
-    padding: 0 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 1px solid #000;
 }
 
-section {
-    height: 200px;
-    width: 100%;
+/* main */
+
+main 
+{
     display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-section article {
-    width: 100%;
-    height: 200px;
-    margin: 5px;
+section 
+{
     display: flex;
     flex: 1;
     flex-direction: column;
+    width: 100%;
+    height: 280px;
+    padding: 40px;
+}
+
+article, .seemore h2 
+{
+    flex: 1;
+    margin: 30px;
+    border: none;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     background-image: linear-gradient(to right, rgb(32, 192, 255) , rgb(189, 255, 252));
 }
 
-section article div {
+article:hover {
+    border: 3px solid orange;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+article div {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -122,12 +143,29 @@ section article div {
 }
 
 .article-text-bg { 
-    background-color: yellow;
+    background-color: #037ab5;
+    color: black;
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-section article div img {
+article div img {
     width: 150px;
 }
+
+.seemore { 
+    display: flex;
+    width: 100%;
+}
+
+.seemore h2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 
 
 /* 
@@ -158,24 +196,53 @@ footer div p {
     padding: 8px 50px;
 }
 
-@media only screen and (max-width: 414px) {
+
+@media (min-width: 600px) and (max-width: 919px) {
+
     
-    main {
-        margin: 0;
-        padding: 0;
-        display: inline-flex;
+
+    section {
+        align-items: center;
+        flex-flow: row wrap;
+        flex-grow: 2;
+    }
+
+}
+
+@media (min-width: 920px) {
+
+    
+    /* div h1 */
+
+    h1 { 
+        display: flex;
+        justify-content: flex-end;
+        margin: 40px 50px;
+        position: relative;
+    }
+
+    h1:before, h1:after {
+        content: "";
+        width: 50%;
+        height: 4px;
+        background: #000;
+        position: absolute;
+        top: 50%;
+        left: 0;
     }
 
     section {
-
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    section article {
-        border: 2px solid green;
-        width: 100%;
+    .article-video {
+        display: flex;
+        padding: 5px 40px;
     }
 
-    .article-text-bg { 
-        background-color: red;
-    }
+    .article-video span { padding: 30px 60px;}
+
+    
 }
