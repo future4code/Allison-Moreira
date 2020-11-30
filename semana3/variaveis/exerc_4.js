@@ -5,17 +5,12 @@
         // a) Crie uma nova variável, contendo um array com as respostas. Utilize o tipo booleano para cada resposta.
 
             let faq = ['Usa tênis?','Gosta de café?','Ama Tecnologia?']
-            let resposta = []
+            let resposta = [true, false, true]
 
-            resposta[0] = prompt(faq[0])
-            resposta[1] = prompt(faq[1])
-            resposta[2] = prompt(faq[2])
+            
+        // b) Imprima na tela todas as perguntas seguidas por suas respectivas respostas. Por exemplo:
 
             console.log( faq[0], resposta[0])
             console.log( faq[1], resposta[1])
             console.log( faq[2], resposta[2])
-
-            
-
-        // b) Imprima na tela todas as perguntas seguidas por suas respectivas respostas. Por exemplo:
 
