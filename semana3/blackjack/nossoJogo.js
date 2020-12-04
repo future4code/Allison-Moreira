@@ -29,6 +29,8 @@
                alert("Usuario Vencedor!")
             } else if ( somaPc >= 17 && somaPc <= 21 && somaUser < 17) {
                alert("PC vencedor")
+            } else if ( somaPc === somaUser) {
+               alert("EMPATE!")
             } else {
                alert("AMBOS NÃO CHEGARAM AO 21")
             }
