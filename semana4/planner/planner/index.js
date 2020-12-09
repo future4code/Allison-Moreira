@@ -3,13 +3,13 @@
             
             const input = document.getElementById("tarefa")
             const inputValue = input.value
-            document.getElementById("tarefa").value = "" // remover ao terminar de adicionar
+            document.getElementById("tarefa").value = null // remover ao terminar de adicionar
             
-            const select = document.getElementById("dias-semana")
+            const select = document.getElementById("dias-semana") 
             const selectValue = select.value
 
             const div = document.getElementById(selectValue)
-            div.innerHTML += `<p class='container-item' id='remove'>${inputValue}</p>`
+            div.innerHTML += `<p class='container-item'>${inputValue}</p>`
             
 
          //riscando tarefas
