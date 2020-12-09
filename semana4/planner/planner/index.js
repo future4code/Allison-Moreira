@@ -2,30 +2,39 @@
 // Use um evento apropriado que identifique o clique no botão.
 
         function criarTarefa() {
-            console.log("Função blz!")
             
             const input = document.getElementById("tarefa")
             const inputValue = input.value
-            console.log(" input >>", inputValue)
-
+            document.getElementById("tarefa").value = "" // remover ao terminar de adicionar
+            
             const select = document.getElementById("dias-semana")
             const selectValue = select.value
 
             const div = document.getElementById(selectValue)
-            div.innerHTML += `<p class='container-item'>${inputValue}</p>`//riscando tarefas
-
-                     //riscando tarefas
-
-                        const containerSection = document.getElementById('container')
-                        containerSection.addEventListener('click',  riscarItem)
+            div.innerHTML += `<p class='container-item'>${inputValue}</p>`
             
-                        function riscarItem(e) {
-                            console.log(e.target)
-                            if (e.target.classList.contains('container-item')) {
-                                e.target.classList.toggle('risco-item')
-                            }
-                        }
-                    }
+
+         //riscando tarefas
+
+            const containerSection = document.getElementById('container')
+            containerSection.addEventListener('click',  riscarItem)
+
+            function riscarItem(e) {
+                console.log(e.target)
+                if (e.target.classList.contains('container-item')) {
+                    e.target.classList.toggle('risco-item')
+                }
+            }
+        }
+    
+    function limparTarefas() {
+        console.log("Limpar blz")
+        const div = document.getElementsByClassName('container-item')
+        if (div) {
+            console.log(div)
+            // sem solução para remover :/
+        }
+    }
 
 // 2 - Dentro da função, capture o valor do campo do HTML 
 // (que é a tarefa a ser colocada no planner) e armazene em uma variável.

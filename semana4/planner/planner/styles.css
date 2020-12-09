@@ -32,9 +32,13 @@ h3 {
     box-shadow: 0 9px 6px -8px #777;
 }
 
-.btn-planner {
-    background: #9823f7;
+.btn-planner-criar { background: #9823f7; }
+
+.btn-planner-limpar { background: #7305ce; }
+
+.btn-planner-criar, .btn-planner-limpar {
     padding: .5em 2em;
+    margin: 3px;
     border: none;
     color: white;
     font-size: 1.2em;
@@ -48,9 +52,10 @@ h3 {
     text-decoration: line-through;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 1016px) {
     header {
         flex-wrap: wrap;
+        height: auto;
     }
 
     section {
@@ -61,7 +66,7 @@ h3 {
     .semana {
         width: 100%;
         height: 200px;
-        max-width: 85%;
+        max-width: 90%;
         margin: 30px;
     }
 }
