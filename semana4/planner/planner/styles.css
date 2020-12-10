@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+
+.semana {
+    border-bottom: 5px solid #9823f7;
+    background-color: #EEF1F2;
+    width: 14%;
+    box-shadow: 0 9px 6px -8px #777;
+}
+
+h3 {
+    background-color: #9823f7;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 9px 6px -8px #777;
+}
+
+form {
+    height: 20px;
+}
+.btn-planner-criar { background: #9823f7; }
+
+.btn-planner-limpar { background: #7305ce; }
+
+.btn-planner-criar, .btn-planner-limpar {
+    padding: .5em 2em;
+    margin: 3px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.risco-item {
+    text-decoration: line-through;
+}
+
+p { 
+    font-size: 2em; 
+    background-color: red;
+    padding: 10px;
+    margin: 1px;
+}
+
+@media screen and (max-width: 1016px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    section {
+        display: block;
+        height: 100%;
+    }
+
+    .semana {
+        width: 100%;
+        height: auto;
+        max-width: 90%;
+        margin: 30px;
+    }
+}
