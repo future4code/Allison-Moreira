@@ -31,3 +31,59 @@
     // a Primeira: qual é o numero menor do array.
     // e a segunda é: qual maior numero da array.
     // e depos é impresso no console, os dois resultados.
+
+
+// ================================================================== // ============================================================
+
+
+    
+    // Exercicios de logica de Programação
+
+    // 1.
+    // Três maneiras de percorrer um Array, é Filter, map e ForEach
+
+        // const bonecos = [
+        //     {nome: "Primeiro", life: 0, lifemax: 1000},
+        //     {nome: "Segundo", life: 0, lifemax: 1000},
+        //     {nome: "Terceiro", life: 0, lifemax: 1000}
+        // ]
+
+        // bonecos.forEach((boneco) => {
+        //     boneco.life = boneco.lifemax
+        // })
+        
+        // console.log(bonecos)
+
+    // 2.
+    
+    // a) `booleano1 && booleano2 && !booleano4`
+            // false
+    // b) `(booleano1 && booleano2) || !booleano3`
+            // false
+    // c)  `(booleano2 || booleano3) && (booleano4 || booleano1)`
+            // true
+    // d) `!(booleano2 && booleano3) || !(booleano1 && booleano3)`
+            // true
+    // e) `!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)`
+            // true
+
+    // 3.
+
+    //Você tem que escrever um código que, dado um número N, ele imprima (no console) os N primeiros números pares 
+    //(por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4, 6 e 8).  
+
+            // let i = 0
+            // let result = 0
+            // const quantidadeDeNumerosPares = Number(prompt("Quantidade de vezes que deve aparecer os numeros pares: "))
+
+            // while (i < quantidadeDeNumerosPares) {
+            //     i++
+            //     console.log(result)
+            //     result = result + 1
+            //     result++
+            // }
+    
+    
+    // 4.
+
+    //
