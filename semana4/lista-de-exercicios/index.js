@@ -86,4 +86,45 @@
     
     // 4.
 
-    //
+        // let trigonometria = () => {
+
+        //     let a = Number(prompt("Digite o valor do triângulo, Lado A:"))
+        //     let b = Number(prompt("Digite o valor do triângulo, Lado B:"))
+        //     let c = Number(prompt("Digite o valor do triângulo, Lado C:"))
+
+        //     if ( a === c && b === c) {
+        //         console.log("Equilátero")
+        //     } else if ( a != b && b != c && c != a) {
+        //         console.log("Escaleno")
+        //     } else {
+        //         console.log("Isósceles")
+        //     }
+
+        // }
+
+        // trigonometria()
+
+
+
+    // 5.
+
+    let doisNumeros = () => {
+        let a = Number(prompt("Digite o primeiro Valor: "))
+        let b = Number(prompt("Digite o segundo valor:"))
+        
+        const array = [a, b]
+        
+        for( num of array) {
+            array = infinity
+            console.log("O maior é:", array)
+
+            // if (num = a/b){
+            //     console.log("ok")
+            // } else {
+            //     console.log("nao é")
+            // }
+        }
+
+}
+
+doisNumeros()
