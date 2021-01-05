@@ -7,8 +7,17 @@ export default class Etapa2 extends React.Component {
 
     return (
       <div>
-        <h1>Etapa2</h1>
-        <p>Muito obrigado por participar! Entraremos em contato!</p>
+        <h1>ETAPA 2 - INFORMAÇÕES DO ENSINO SUPERIOR</h1>
+        <form>
+          <label>5. Qual curso? </label>
+          <br />
+          <input />
+          <br />
+          <label>6. Qual a unidade de ensino? </label>
+          <br />
+          <input />
+          <br />
+        </form>
       </div>
     );
   }
