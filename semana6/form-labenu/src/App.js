@@ -7,33 +7,28 @@ import Etapa3 from './components/Etapa3'
 export default class App extends React.Component {
   state = {
     nextPage: 1
-    })
+    }
+  
+ 
+  renderizaEtapa = () => {
+    switch (this.state.nextPage) {
+      case 1: 
+        return <Etapa1 />
+      case 2: 
+        return <Etapa2 />
+      case 3: 
+        return <Etapa3 />
+      case 4: 
+        return <Obrigado />
+    }
   }
-  // fazerLogin = () => {
-  //   this.setState({ estaLogado: true });
-  // };
-
-  // fazerLogout = () => {
-  //   this.setState({ estaLogado: false });
-  // };
 
   render() {
-    const formLabenu = () => {
-      if (this.state.nextPage === 1) {
-        return <Etapa1 botaoNext={this.newNextPage} />
-      } else if (this.state.nextPage === 2) {
-        return <Etapa2 botaoNext={this.newNextPage} />
-      } else if (this.state.nextPage === 3) {
-        return <Etapa3 botaoNext={this.newNextPage} />
-      } else if (this.state.nextPage === 4) {
-        return <Obrigado />
-      }
-    };
+    return <div>
 
-    return <div className="App">
-
-      {formLabenu()}
+      {this.renderizaEtapa()}
+      <button onClick=''>Avançar</button>
     
-    </div>;
+    </div>  
   }
 }

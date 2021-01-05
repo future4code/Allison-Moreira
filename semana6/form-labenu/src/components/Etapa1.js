@@ -21,7 +21,6 @@ export default class Etapa1 extends React.Component {
           <label>Qual é o seu Grau de Escolaridade: </label>
           <input />
           <br/>
-          <button>Avançar</button>
         </form>
       </div>
     );
