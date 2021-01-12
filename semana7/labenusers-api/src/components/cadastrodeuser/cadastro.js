@@ -21,7 +21,6 @@ const Div = styled.div`
 `
 
 const Label = styled.label`
-
     margin: 10px;
 `
 
@@ -31,7 +30,6 @@ const Input = styled.input`
 `
 
 const Button  = styled.button`
-
     margin: 10px;
 `
 
@@ -39,7 +37,8 @@ export default class Cadastros extends react.Component {
     state = {
         valorInputNome: "",
         valorInputEmail: "",
-        mostrarListas: false
+        lista: [],
+        // mostrarListas: false
     }
 
     getNome = (event) => {
@@ -50,12 +49,8 @@ export default class Cadastros extends react.Component {
         this.setState({ valorInputEmail: event.target.value });
     };
 
-    exibirListar = () => {
 
-        const body = {
-            id: "",
-            name: ""
-        }
+    exibirListar = () => {
 
         const res = axios.get(
             "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
@@ -68,13 +63,11 @@ export default class Cadastros extends react.Component {
 
         res
         .then((resposta) => {
-                
-                console.log(body)
-                alert("SUA LISTA");
+            this.setState({ lista: resposta.data }) 
+            alert("SUA LISTA É UM SUCESSO!!!");
             })
             .catch((erro) => {
-                console.log(body)
-                alert("Oppss! Não é possivel EXIBIR SUA LISTA");
+                alert("Oppss! Não é possiVEL EXIBIR SUA LISTA");
             })
 
     }
@@ -85,7 +78,7 @@ export default class Cadastros extends react.Component {
           email: this.state.valorInputEmail,
         };
     
-        const request = axios.post(
+        const req = axios.post(
           "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
           body,
           {
@@ -95,9 +88,8 @@ export default class Cadastros extends react.Component {
           }
         )
     
-        request
+        req
           .then((resposta) => {
-              
             console.log(body)
             alert("Cadastro realizado com sucesso!");
           })
@@ -110,6 +102,10 @@ export default class Cadastros extends react.Component {
 
 
     render() {
+
+         const renderLista = this.state.lista.map((mylista) => {
+            return <p key="name">{mylista.name}</p>;
+        });
         return (
             <Form>
                 <Div>
@@ -120,8 +116,9 @@ export default class Cadastros extends react.Component {
                     <Button onClick={this.criarUser}>CADASTRAR</Button>
                     <Button onClick={this.exibirListar}>LISTA</Button>
                 </Div>
-
-
+                <Div>
+                    {renderLista}
+                </Div>
             </Form>
         )
     }
