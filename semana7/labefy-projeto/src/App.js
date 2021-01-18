@@ -1,10 +1,20 @@
-import React from 'react';
-import List from './components/ListPlayList'
+import React from 'react'
+import TrackToPlayList from './components/trackto/trackto'
+import PlayList from './components/playlist/PlayList'
+import Search from './components/search/search'
+import Image from './img/bg-labefy.jpg'
 import styled from 'styled-components'
 
-const PageHome = styled.div``
-const PageNext = styled.div``
+const PageContainer = styled.div``
 
+const PageHome = styled.div`
+  background-image: url(${props => props.background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  height: 100vh;
+  padding: 20px 200px;
+`
 
 export default class App extends React.Component {
   state = {
@@ -19,24 +29,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-
-        {/* {this.state.page ? '' : '' } */}
-
-        <PageHome>
-          <div>
-            <h1>Home</h1>
-            <button onClick={this.changePage}>Next Page</button>
-          </div>
-        </PageHome>
-
-        <PageNext>
-          <List />
-          <button onClick={this.changePage}>Next Page</button>
-          <button onClick={this.changePage}>Back Page</button>
-        </PageNext>
-
-      </div>
+      <PageHome background={Image} >
+        <PageContainer>
+          <PlayList />
+          {/* <Search /> */}
+          {/* <TrackToPlayList/> */}
+        </PageContainer>
+      </PageHome>
     )
   }
 }
