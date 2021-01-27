@@ -1,9 +1,8 @@
 
 function App() {
   return (
-    <div className="App">
+    <div>
        <h2>AstroMatch</h2>  
-       
     </div>
   );
 }
