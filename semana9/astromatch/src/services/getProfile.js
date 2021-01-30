@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import ProfileMatch from '../components/profileMatch';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ProfileMatch from "../components/profileMatch";
+import ButtonMatch from "../services/postChoose";
 
 export default function DadosProfile(props) {
   const [dados, setDados] = useState({});
@@ -25,6 +26,7 @@ export default function DadosProfile(props) {
   return (
     <div>
       <ProfileMatch profile={dados} />
+      <ButtonMatch idProfile={dados} />
     </div>
   );
 }

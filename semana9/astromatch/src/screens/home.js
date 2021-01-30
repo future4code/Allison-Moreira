@@ -1,20 +1,49 @@
-// import GetApiProfile from "../services/getMatch";
-import ButtonMatch from "../components/buttonClear";
+import React, { useState } from "react";
+import Header from "../components/header";
+import ButtonClear from "../services/putClear";
 import GetApiProfile from "../services/getProfile";
-import {Main, Container, ContainerRow, Card, Header, Line} from '../styleds/homeStyleds'
+import GetApiMatch from "../services/getMatch";
+import {
+  Main,
+  Container,
+  ContainerRow,
+  Card,
+  Line,
+} from "../styleds/homeStyleds";
 
 function App() {
+  const [selectPage, setSelectPage] = useState("GetApiProfile");
+
+  const renderSelect = () => {
+    switch (selectPage) {
+      case "GetApiProfile":
+        return <GetApiProfile />;
+      case "GetApiMatch":
+        return <GetApiMatch />;
+      default:
+        return <GetApiProfile />;
+    }
+  };
+
+  const goToPageProfile = () => {
+    setSelectPage("GetApiProfile");
+  };
+
+  const goToPageMatch = () => {
+    setSelectPage("GetApiMatch");
+  };
+
   return (
     <Main>
       <Container>
         <ContainerRow>
           <Card>
-            <Header>MATCH</Header>
+            <Header goToPageProfile={goToPageProfile} goToPageMatch={goToPageMatch} />
             <Line />
-            <GetApiProfile />
+            {renderSelect()}
           </Card>
 
-          <ButtonMatch/>
+          <ButtonClear />
 
         </ContainerRow>
       </Container>

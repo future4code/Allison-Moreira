@@ -1,5 +1,4 @@
 import { Main, Position } from "../styleds/profileStyleds";
-import ButtonMatch from '../services/postChoose';
 import DadosProfile from "./dadosProfile";
 
 export default function ProfileMatch(props) {
@@ -10,7 +9,6 @@ export default function ProfileMatch(props) {
           <DadosProfile info={props.profile} />
         </Position>
       </Main>
-      <ButtonMatch />
     </>
   );
 }

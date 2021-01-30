@@ -2,23 +2,49 @@ import { Button } from "../styleds/profileStyleds";
 
 export default function ButtonMatch(props) {
 
-    const handleClick = (event) => {
-        event.preventDefault()
-        props.sendDados()
-        console.log("BUTTON: ", props.sendDados)
-    }
+    const onCLickNo = () => {
+      console.log("filho: ")
+    // const body = {
+    //   id: props.dados.id,
+    //   choice: false,
+    // };
+  };
+
+  const onCLickYes = () => {
+    console.log("filho: ")
+    // const body = {
+    //   id: props.dados.id,
+    //   choice: true,
+    // };
+  };
 
   return (
     <>
-      <Button 
-      border="1px solid red" color="red" colorHover="white" bgHover="red">
+      <Button
+        onClick={() => onCLickNo(this)}
+        border="1px solid red"
+        color="red"
+        colorHover="white"
+        bgHover="red"
+      >
         X
       </Button>
-      <Button 
-            sendDados={props.sendDados} onClick={handleClick}
-            border="1px solid green" color="green" colorHover="white" bgHover="green">
+      <Button
+        onClick={() => onCLickYes(this)}
+        border="1px solid green"
+        color="green"
+        colorHover="white"
+        bgHover="green"
+      >
         ♥️
       </Button>
     </>
   );
 }
+  // const handleClickNo = (event) => {
+  //   console.log(props.onCLickNo); 
+  // };
+
+  // const handleClickYes = (event) => {
+  //   console.log(props.onCLickYes);
+  // }; 

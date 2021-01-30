@@ -2,51 +2,41 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SendMatchs from "../components/buttonMatch";
 
-export default function DadosMatches(props) {
-  const [dados, setDados] = useState({});
+export default function ChooseMatches(props) {
+  const [dadosMatch, setDadosMatch] = useState({});
 
-//   const [like, setLike] = useState(false);
-//   const [unLike, setUnLike] = useState(true);
+  const getDadosMatch = (id) => {
 
-//   const ClickLike = () => {
-//       setLike(!like)
-//       setDados(like)
-//   }
+    console.log("props aqui: ", props.idProfile.id)
+    id = props.idProfile.id
 
-//   const ClickUnLike = () => {
-//     setUnLike(!unLike)
-//     setDados(unLike)
-// }
-
-  const sendDados = (id) => {
     const body = {
-      id: `${id}`,
-      choice: true,
+      "id": `${id}`,
+      "choice": true, 
     };
 
     axios
       .post(
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/allison-marques/choose-person",
-        body
+        body, 
       )
       .then((res) => {
-        console.log("GOSTOU? ", res.data.isMatch);
-        alert("Gostou, né?");
-        setDados(res.data.isMatch);
+          console.log("ismatch", res.data.isMatch)
+          console.log("dados", dadosMatch)
+        setDadosMatch(res.data.isMatch);
       })
       .catch((err) => {
-        alert("vamos para próxima!");
         console.log(err);
       });
   };
 
   useEffect(() => {
-    sendDados();
+    getDadosMatch();
   }, []);
 
   return (
     <div>
-      <SendMatchs matches={dados} sendDados={sendDados.bind(this)} />
+      <SendMatchs matches={dadosMatch} />
     </div>
   );
 }

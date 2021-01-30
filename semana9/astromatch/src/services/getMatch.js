@@ -3,7 +3,7 @@ import axios from "axios";
 import ListMatchs from "../components/listMatchs";
 
 export default function DadosMatches(props) {
-  const [dados, setDados] = useState([]);
+  const [dadosMatch, setDadosMatch] = useState([]);
 
   const getMatch = () => {
     axios
@@ -12,7 +12,7 @@ export default function DadosMatches(props) {
       )
       .then((res) => {
           console.log("get MATCHES", res.data.matches)
-        setDados(res.data.matches);
+        setDadosMatch(res.data.matches);
       })
       .catch((err) => {
         console.log(err);
@@ -25,7 +25,7 @@ export default function DadosMatches(props) {
 
   return (
     <div>
-      <ListMatchs matches={dados} />
+      <ListMatchs matches={dadosMatch} />
     </div>
   );
 }

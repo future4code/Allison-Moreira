@@ -1,32 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
-import SendMatchs from "../components/buttonMatch";
+import SendClear from "../components/buttonClear";
 
 export default function ClearMatches(props) {
-  const [Clear, setClear] = useState({});
 
   const sendClear = () => {
     axios
-      .post(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/allison-marques/choose-person"
+      .put(
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/allison-marqs/clear"
       )
       .then((res) => {
-        console.log("GOSTOU? ", res.data.isMatch);
-        setClear(res.data.matches);
+        console.log(res)
       })
-      .catch((err) => {
-        alert("vamos para próxima!");
-        console.log(err);
-      });
   };
-
-  useEffect(() => {
-    sendClear();
-  }, []);
 
   return (
     <div>
-      <SendMatchs matches={Clear} sendClear={sendClear.bind(this)} />
+     <button onClick={sendClear}> CLEAR </button>
     </div>
   );
 }

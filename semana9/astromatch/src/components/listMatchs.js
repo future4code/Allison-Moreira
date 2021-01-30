@@ -2,7 +2,6 @@ import { Cards, Main } from "../styleds/listStyleds";
 import DadosProfile from "./dadosProfile";
 
 export default function ListMatchs(props) {
-
   return (
     <>
       <Main>
