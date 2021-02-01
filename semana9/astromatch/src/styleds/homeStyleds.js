@@ -30,4 +30,6 @@ export const Card = styled.div`
 
 export const Header = styled.div`
   padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 `;

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../components/header";
-import ButtonClear from "../services/putClear";
 import GetApiProfile from "../services/getProfile";
 import GetApiMatch from "../services/getMatch";
 import {
@@ -42,9 +41,6 @@ function App() {
             <Line />
             {renderSelect()}
           </Card>
-
-          <ButtonClear />
-
         </ContainerRow>
       </Container>
     </Main>

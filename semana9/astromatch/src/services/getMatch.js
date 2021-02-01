@@ -11,7 +11,7 @@ export default function DadosMatches(props) {
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/allison-marques/matches"
       )
       .then((res) => {
-          console.log("get MATCHES", res.data.matches)
+          // console.log("get MATCHES", res.data.matches)
         setDadosMatch(res.data.matches);
       })
       .catch((err) => {
@@ -25,7 +25,7 @@ export default function DadosMatches(props) {
 
   return (
     <div>
-      <ListMatchs matches={dadosMatch} />
+      <ListMatchs matches={dadosMatch}  />
     </div>
   );
 }

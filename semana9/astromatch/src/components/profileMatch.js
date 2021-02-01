@@ -4,7 +4,7 @@ import DadosProfile from "./dadosProfile";
 export default function ProfileMatch(props) {
   return (
     <>
-      <Main bgMain={props.profile.photo}>
+      <Main >
         <Position>
           <DadosProfile info={props.profile} />
         </Position>

@@ -7,8 +7,8 @@ export default function ChooseMatches(props) {
 
   const getDadosMatch = (id) => {
 
-    console.log("props aqui: ", props.idProfile.id)
-    id = props.idProfile.id
+    // console.log("props aqui: ", props.idProfile.id)
+    // id = props.idProfile.id
 
     const body = {
       "id": `${id}`,
@@ -21,8 +21,8 @@ export default function ChooseMatches(props) {
         body, 
       )
       .then((res) => {
-          console.log("ismatch", res.data.isMatch)
-          console.log("dados", dadosMatch)
+          // console.log("ismatch", res.data.isMatch)
+          // console.log("dados", dadosMatch)
         setDadosMatch(res.data.isMatch);
       })
       .catch((err) => {
@@ -32,7 +32,7 @@ export default function ChooseMatches(props) {
 
   useEffect(() => {
     getDadosMatch();
-  }, []);
+  });
 
   return (
     <div>

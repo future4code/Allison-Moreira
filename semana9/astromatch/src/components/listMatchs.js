@@ -4,11 +4,11 @@ import DadosProfile from "./dadosProfile";
 export default function ListMatchs(props) {
   return (
     <>
-      <Main>
+      <Main key={props.matches.id}>
         {props.matches.map( p => {
           return(
-            <Cards key={props.matches.id}>
-              { console.log("List MATCHS: ", props.matches) && <DadosProfile info={props.matches} />}
+            <Cards>
+              { props.matches && <DadosProfile info={props.matches} />}
             </Cards>
           )}
         )}
