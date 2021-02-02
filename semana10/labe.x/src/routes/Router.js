@@ -6,10 +6,14 @@ import RegisterUserPage from "../pages/RegisterUserPage/RegisterUserPage";
 import InscriptionTravelPage from "../pages/InscriptionTravelPage/InscriptionTravelPage";
 import FaqPage from "../pages/FaqPage/FaqPage";
 import LoginPage from "../pages/LoginUserPage/LoginUserPage";
+import Header from "../components/Header/Header";
 
 function Router() {
   return (
     <BrowserRouter>
+
+      <Header />
+
       <Switch>
         <Route exact path="/">
           <App />
