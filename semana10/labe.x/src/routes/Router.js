@@ -11,11 +11,9 @@ import Header from "../components/Header/Header";
 function Router() {
   return (
     <BrowserRouter>
-
-      <Header />
-
       <Switch>
         <Route exact path="/">
+          <Header />
           <App />
         </Route>
 
@@ -24,6 +22,7 @@ function Router() {
         </Route>
 
         <Route exact path="/viagens">
+          <Header />
           <TravelPage />
         </Route>
 
@@ -36,6 +35,7 @@ function Router() {
         </Route>
 
         <Route exact path="/duvidas-frequentes">
+          <Header />
           <FaqPage />
         </Route>
 

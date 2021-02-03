@@ -1,3 +1,4 @@
+import { HomeStyled } from '../../assets/styled/HomeStyled'
 
 function HomePage() {
 

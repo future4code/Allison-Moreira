@@ -1,24 +1,80 @@
 import { useHistory } from "react-router-dom";
-import { goToLoginUserPage, goToTravelPage, goToFaqPage, goToRegisterUser, goToResgisterTravels } from "../../routes/Coordinator";
+import {
+  goToHomePage,
+  goToLoginUserPage,
+  goToTravelPage,
+  goToFaqPage,
+  goToRegisterUser,
+  goToResgisterTravels,
+} from "../../routes/Coordinator";
+import {
+  HeaderStyled,
+  HeaderDiv,
+  Button,
+} from "../../assets/styled/HeaderStyled";
 
 function Header() {
-
-  const history = useHistory()
+  const history = useHistory();
 
   return (
-    <div>
+    <HeaderStyled>
+      <HeaderDiv flex="">
+        <img alt="logo" onClick={() => goToHomePage(history)} />
+      </HeaderDiv>
+      <HeaderDiv flex="">
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToHomePage(history)}
+        >
+          INICIO
+        </Button>
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToTravelPage(history)}
+        >
+          viagens
+        </Button>
 
-      <button onClick={ () => goToFaqPage(history)}>duvida</button>
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToFaqPage(history)}
+        >
+          duvida
+        </Button>
 
-      <button onClick={ () => goToTravelPage(history)}>viagens</button>
-
-      <button onClick={ () => goToRegisterUser(history)}>cadastrar user</button>
-
-      <button onClick={ () => goToResgisterTravels(history)}>isncrição viagem</button>
-     
-      <button onClick={ () => goToLoginUserPage(history)}>Login user</button>
-
-    </div>
+        <Button
+          color="white"
+          radius="0.5em;"
+          borderBottom="3px solid #9a0712"
+          borderBottomActive="3px solid rgb(234, 29, 44)"
+          bgColor="rgb(234, 29, 44)"
+          shadow="1px 0.5px 0px 1px rgb(0, 0, 0, 0.5)"
+          shadowActive="0 0 0 #930, inset 5px 5px 5px #9a0712"
+          padding="10px 40px;"
+          translate="translate(3px, 3px)"
+          onClick={() => goToLoginUserPage(history)}
+        >
+          ENTRAR
+        </Button>
+        <Button
+          color="white"
+          radius="0.5em;"
+          borderBottom="3px solid rgb(0, 0, 40)"
+          borderBottomActive="3px solid rgb(234, 29, 44)"
+          bgColor="rgb(0, 0, 0)"
+          shadow="1px 0.5px 0px 1px rgb(0, 0, 0, 0.5)"
+          shadowActive="0 0 0 #930, inset 5px 5px 5px #9a0712"
+          padding="10px 40px;"
+          translate="translate(3px, 3px)"
+          onClick={() => goToRegisterUser(history)}
+        >
+          cadastrar user
+        </Button>
+      </HeaderDiv>
+    </HeaderStyled>
   );
 }
 
