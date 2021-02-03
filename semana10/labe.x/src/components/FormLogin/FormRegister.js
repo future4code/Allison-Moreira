@@ -5,6 +5,7 @@ import {
   Input,
   Button,
 } from "../../assets/styled/LoginStyled";
+import { goToLoginUserPage } from '../../routes/Coordinator'
 
 import axios from "axios";
 import { useState } from "react";
@@ -75,7 +76,7 @@ function FormRegister() {
         <Text bgColor="#000" color="red" padding="8px"> Mostrar e Remover {infoError}</Text>
 
         <Text>
-          Já tenho conta! <a href="/login"> Acessar agora!</a>{" "}
+          Já tenho conta! <button onClick={() => goToLoginUserPage(history)}> Acessar agora!</button>{" "}
         </Text>
       </FormDiv>
     </FormMain>

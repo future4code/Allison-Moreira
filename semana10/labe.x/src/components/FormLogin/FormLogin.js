@@ -6,6 +6,7 @@ import {
   Button,
 } from "../../assets/styled/LoginStyled";
 import { useHistory } from "react-router-dom";
+import {goToRegisterUser} from '../../routes/Coordinator'
 
 import axios from "axios";
 import { useState } from "react";
@@ -74,7 +75,7 @@ function FormLogin() {
         <Button onClick={() => Login()}>ENTRAR</Button>
 
         <Text>
-          Novo na LabeX? <a href="/cadastro">Crie uma conta.</a>{" "}
+          Novo na LabeX? <button onClick={() => goToRegisterUser(history)} >Crie uma conta.</button>
         </Text>
       </FormDiv>
     </FormMain>

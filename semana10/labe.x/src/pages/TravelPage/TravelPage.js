@@ -7,6 +7,7 @@ function TravelPage() {
 
   useEffect(()=>{
     const token = window.localStorage.getItem('token')
+    console.log("Hooks das proteções de tela")
 
     if ( token === null) {
       history.push('/login')
