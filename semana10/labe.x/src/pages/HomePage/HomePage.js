@@ -3,9 +3,9 @@ import { HomeStyled } from '../../assets/styled/HomeStyled'
 function HomePage() {
 
   return (
-    <div>
+    <HomeStyled>
       <h1>Home</h1>
-    </div>
+    </HomeStyled>
   );
 }
 

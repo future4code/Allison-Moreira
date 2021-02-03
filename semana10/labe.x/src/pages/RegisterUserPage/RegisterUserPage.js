@@ -1,7 +1,9 @@
+import FormRegister from "../../components/FormLogin/FormRegister";
+
 function RegisterUser() {
     return (
       <div>
-        <h1>Registro de usuario</h1>
+        <FormRegister/>
       </div>
     );
   }

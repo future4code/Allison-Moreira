@@ -5,7 +5,6 @@ import {
   goToTravelPage,
   goToFaqPage,
   goToRegisterUser,
-  goToResgisterTravels,
 } from "../../routes/Coordinator";
 import {
   HeaderStyled,
