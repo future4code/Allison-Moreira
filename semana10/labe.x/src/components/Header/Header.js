@@ -70,7 +70,7 @@ function Header() {
           translate="translate(3px, 3px)"
           onClick={() => goToRegisterUser(history)}
         >
-          cadastrar user
+          cadastre-se
         </Button>
       </HeaderDiv>
     </HeaderStyled>

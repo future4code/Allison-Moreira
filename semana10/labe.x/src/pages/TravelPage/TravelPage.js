@@ -11,7 +11,6 @@ function TravelPage() {
 
     if ( token === null) {
       history.push('/login')
-      console.log("token null")
     } else {
       history.push("/viagens")
     }
