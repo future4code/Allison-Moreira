@@ -1,27 +1,49 @@
-import { useEffect } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 function TravelPage() {
+  const [trips, setTrips] = useState({});
+  const history = useHistory();
 
-  const history = useHistory()
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    console.log("Hooks das proteções de tela");
 
-  useEffect(()=>{
-    const token = window.localStorage.getItem('token')
-    console.log("Hooks das proteções de tela")
-
-    if ( token === null) {
-      history.push('/login')
+    if (token === null) {
+      history.push("/login");
     } else {
-      history.push("/viagens")
+      history.push("/viagens");
     }
-  }, [history])
+  }, [history]);
 
-    return (
-      <div>
-        <h1>Viagens</h1>
-      </div>
-    );
-  }
-  
-  export default TravelPage;
-  
+  useEffect(() => {
+    getTrips(trips);
+  }, [trips]);
+
+  const getTrips = () => {
+    axios
+      .get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/allison-marques/trips",
+        {
+          headers: {
+            auth: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        setTrips(res.data.trips);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  return (
+    <div>
+      <h1>Viagens</h1>
+    </div>
+  );
+}
+
+export default TravelPage;

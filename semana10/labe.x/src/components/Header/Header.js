@@ -5,6 +5,7 @@ import {
   goToTravelPage,
   goToFaqPage,
   goToRegisterUser,
+  goToAdminHomePage,
 } from "../../routes/Coordinator";
 import {
   HeaderStyled,
@@ -72,6 +73,15 @@ function Header() {
         >
           cadastre-se
         </Button>
+
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToAdminHomePage(history)}
+        >
+          admin
+        </Button>
+
       </HeaderDiv>
     </HeaderStyled>
   );

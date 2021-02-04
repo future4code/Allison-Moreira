@@ -23,3 +23,11 @@ export const goToTravelPage = (history) => {
 export const goToLoginUserPage = (history) => {
     history.push("/Login")
 }
+
+export const goToAdminHomePage = (history) => {
+    history.push("/Admin/")
+}
+
+export const goToAdminCreateTrip = (history) => {
+    history.push("/Admin/CreateTrip")
+}

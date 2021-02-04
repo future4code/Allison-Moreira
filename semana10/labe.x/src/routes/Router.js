@@ -7,6 +7,9 @@ import InscriptionTravelPage from "../pages/InscriptionTravelPage/InscriptionTra
 import FaqPage from "../pages/FaqPage/FaqPage";
 import LoginPage from "../pages/LoginUserPage/LoginUserPage";
 import Header from "../components/Header/Header";
+import HeaderAdmin from "../components/Header/HeaderAdmin";
+import AdminHomePage from "../pages/Admin/HomePage/AdminHomePage";
+import AdminCreateTripPage from "../pages/Admin/CreateTripPage/CreateTripPage";
 
 function Router() {
   return (
@@ -41,6 +44,18 @@ function Router() {
 
         <Route exact path="/error">
           <ErrorPage />
+        </Route>
+
+        {/* PARTE ADMINISTRATIVA */}
+
+        <Route exact path="/Admin/">
+          <HeaderAdmin />
+          <AdminHomePage />
+        </Route>
+
+        <Route exact path="/Admin/CreateTrip">
+          <HeaderAdmin />
+          <AdminCreateTripPage />
         </Route>
 
         <Route>

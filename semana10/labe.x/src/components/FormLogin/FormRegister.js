@@ -5,7 +5,7 @@ import {
   Input,
   Button,
 } from "../../assets/styled/LoginStyled";
-import { goToLoginUserPage } from '../../routes/Coordinator'
+import { goToLoginUserPage, goToHomePage } from "../../routes/Coordinator";
 
 import axios from "axios";
 import { useState } from "react";
@@ -25,7 +25,9 @@ function FormRegister() {
     setPassword(event.target.value);
   };
 
-  const RegisterUserForm = (ErrorPage) => {
+  const RegisterUserForm = (event) => {
+    event.preventDefault();
+
     const body = {
       email: email,
       password: password,
@@ -38,13 +40,24 @@ function FormRegister() {
       )
       .then((res) => {
         window.localStorage.setItem("token", res.data.token);
-        console.log("Validar se já existe o login");
-        console.log("Validar sobre os caracteres");
         history.push("/login");
       })
       .catch((err) => {
-        console.log("validar form null ou vazio")
-        setInfoError(err.response.data.message)
+        if (email === "" && password === "") {
+          setInfoError(
+            "Ops! os campos de Email e Senha estão vazios, preencha para continuar "
+          );
+        } else if (password === "") {
+          setInfoError(
+            "Campo de SENHA está vazio, preencha este campo para continuar."
+          );
+        } else if (email === "") {
+          setInfoError(
+            "Campo E-MAIL está vazio, preencha este campo para continuar."
+          );
+        } else {
+          setInfoError(err.response.data.message);
+        }
       });
   };
 
@@ -55,28 +68,44 @@ function FormRegister() {
         width="100vh"
         margin="auto"
       >
+        <button onClick={() => goToHomePage(history)}>VOLTAR A HOME</button>
         <Text fontSize="42" bold="bold" color="rgb(234,29,44)">
           Vamos viajar ao além ...
         </Text>
         <Text fontSize="18">Informe o seu e-mail e senha para continuar</Text>
 
-        <Input
-          placeholder="E-mail"
-          type="email"
-          value={email}
-          onChange={onChangeEmail}
-        />
-        <Input
-          placeholder="Senha"
-          type="password"
-          value={password}
-          onChange={onChangePassword}
-        />
-        <Button onClick={() => RegisterUserForm()}>Cadastrar</Button>
-        <Text bgColor="#000" color="red" padding="8px"> Mostrar e Remover {infoError}</Text>
+        <form onSubmit={RegisterUserForm}>
+          <Input
+            required
+            placeholder="E-mail"
+            type="email"
+            value={email}
+            onChange={onChangeEmail}
+          />
+          <Input
+            required
+            pattern="[A-Za-z\d]{6,}$"
+            title="Ops! Campo de senha precisa ter mínimo 6 caracteres"
+            placeholder="Senha"
+            type="password"
+            value={password}
+            onChange={onChangePassword}
+          />
+
+          <Button>Cadastrar</Button>
+        </form>
+
+        <Text bgColor="#000" color="red" padding="8px">
+          {" "}
+          Error: {infoError}
+        </Text>
 
         <Text>
-          Já tenho conta! <button onClick={() => goToLoginUserPage(history)}> Acessar agora!</button>{" "}
+          Já tenho conta!{" "}
+          <button onClick={() => goToLoginUserPage(history)}>
+            {" "}
+            Acessar agora!
+          </button>{" "}
         </Text>
       </FormDiv>
     </FormMain>
