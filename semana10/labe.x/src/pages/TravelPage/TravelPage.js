@@ -9,17 +9,14 @@ function TravelPage() {
   useEffect(() => {
     const token = window.localStorage.getItem("token");
     console.log("Hooks das proteções de tela");
+    console.log("Loading - ocultar");
 
     if (token === null) {
       history.push("/login");
-    } else {
-      history.push("/viagens");
-    }
-  }, [history]);
+    } 
 
-  useEffect(() => {
-    getTrips(trips);
-  }, [trips]);
+    getTrips();
+  }, [history]);
 
   const getTrips = () => {
     axios

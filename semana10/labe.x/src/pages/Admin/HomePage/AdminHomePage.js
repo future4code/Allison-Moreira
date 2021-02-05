@@ -1,6 +1,11 @@
 function AdminHomePage() {
     return(
-        <div>Home Admin</div>
+        <div>
+            <div>Home Admin</div>
+            <div>- Somente com login</div>
+            <div>- Sair</div>
+            <div></div>
+        </div>
     )
 }
 

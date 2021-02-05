@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { goToHomePage, goToRegisterUser } from "../../routes/Coordinator";
 
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function FormLogin() {
   const [email, setEmail] = useState("");
@@ -24,6 +24,18 @@ function FormLogin() {
   const onChangePassword = (event) => {
     setPassword(event.target.value);
   };
+
+  useEffect(() => {
+    
+    const token = window.localStorage.getItem("token");
+
+    if (token) {
+      history.push("/viagens");
+    } 
+
+    // Login()
+
+  }, [history])
 
   const Login = (event) => {
     event.preventDefault();
