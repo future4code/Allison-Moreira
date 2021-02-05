@@ -3,9 +3,11 @@ import {
   goToHomePage,
   goToLoginUserPage,
   goToTravelPage,
+  goToTravelDetailPage,
   goToFaqPage,
   goToRegisterUser,
   goToAdminHomePage,
+  goToLogout,
 } from "../../routes/Coordinator";
 import {
   HeaderStyled,
@@ -35,6 +37,13 @@ function Header() {
           onClick={() => goToTravelPage(history)}
         >
           viagens
+        </Button>
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToTravelDetailPage(history)}
+        >
+          detalhes
         </Button>
 
         <Button
@@ -80,6 +89,14 @@ function Header() {
           onClick={() => goToAdminHomePage(history)}
         >
           admin
+        </Button>
+
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToLogout(history)}
+        >
+          Sair
         </Button>
 
       </HeaderDiv>

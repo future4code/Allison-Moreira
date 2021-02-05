@@ -1,37 +1,42 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useGetRequestData } from "../../hookcs/useGetRequestData";
+import styled from "styled-components";
 import { useProtectedPage } from "../../hookcs/useProtectedPage";
+import { goToTravelDetailPage } from '../../routes/Coordinator'
+import { useState } from "react";
+import { Link, useHistory } from 'react-router-dom'
 
-function TravelPage() {
-  const [trips, setTrips] = useState({});
-  console.log("Loading - ocultar");
+const Test = styled.div`
+  border: 1px solid red;
+`;
 
-  useProtectedPage()
-  useEffect(() => {
-    getTrips();
-  });
+function TravelPage(id) {
+  useProtectedPage();
 
-  const getTrips = () => {
-    axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/allison-marques/trips",
-        {
-          headers: {
-            auth: localStorage.getItem("token"),
-          },
-        }
-      )
-      .then((res) => {
-        setTrips(res.data.trips);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const history = useHistory()
+
+  const getTrips = useGetRequestData(
+    "https://us-central1-labenu-apis.cloudfunctions.net/labeX/allison-marques/trips",
+    {}
+  );
 
   return (
     <div>
       <h1>Viagens</h1>
+
+      { getTrips.trips ? (
+        getTrips.trips.map((p) => {
+          return (
+            <Test>
+            {/* ID VER: <Link to={`/viagens/id/${p.id}`} > VER </Link> */}
+            <button onClick={() => goToTravelDetailPage(history, p.id)} >VER</button>
+            <p>Nome: {p.name}</p>
+          </Test>
+          );
+        })
+      ) : (
+        <p>Carregando...</p>
+      )}
+
     </div>
   );
 }

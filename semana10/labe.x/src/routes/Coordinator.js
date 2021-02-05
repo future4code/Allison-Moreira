@@ -1,4 +1,5 @@
-
+import UseLogoutPages from '../hookcs/useLogout'
+import TravelPage from '../pages/TravelPage/TravelPage'
 
 export const goToHomePage = (history) => {
     history.push("/")
@@ -20,6 +21,13 @@ export const goToTravelPage = (history) => {
     history.push("/viagens")
 }
 
+export const goToTravelDetailPage = (history, id) => {
+    console.log("ID: ",id)
+    localStorage.setItem("token", id)
+    history.push(`/viagens/id/${id}`)
+    
+}
+
 export const goToLoginUserPage = (history) => {
     history.push("/Login")
 }
@@ -30,4 +38,9 @@ export const goToAdminHomePage = (history) => {
 
 export const goToAdminCreateTrip = (history) => {
     history.push("/Admin/CreateTrip")
+}
+
+export const goToLogout = (history) => {
+    UseLogoutPages(history)
+    history.push('/login')
 }

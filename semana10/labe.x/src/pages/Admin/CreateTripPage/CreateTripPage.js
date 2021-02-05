@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 function AdminCreateTripPage() {
   const [infoError, setInfoError] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const CreateTrip = () => {
     const body = {

@@ -10,6 +10,7 @@ import Header from "../components/Header/Header";
 import HeaderAdmin from "../components/Header/HeaderAdmin";
 import AdminHomePage from "../pages/Admin/HomePage/AdminHomePage";
 import AdminCreateTripPage from "../pages/Admin/CreateTripPage/CreateTripPage";
+import TravelDetailPage from "../pages/TravelPage/TravelDetailPage";
 
 function Router() {
   return (
@@ -27,6 +28,11 @@ function Router() {
         <Route exact path="/viagens">
           <Header />
           <TravelPage />
+        </Route>
+
+        <Route exact path="/viagens/id/:id">
+          <Header />
+          <TravelDetailPage />
         </Route>
 
         <Route exact path="/cadastro">
