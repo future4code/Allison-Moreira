@@ -1,22 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useProtectedPage } from "../../hookcs/useProtectedPage";
 
 function TravelPage() {
   const [trips, setTrips] = useState({});
-  const history = useHistory();
+  console.log("Loading - ocultar");
 
+  useProtectedPage()
   useEffect(() => {
-    const token = window.localStorage.getItem("token");
-    console.log("Hooks das proteções de tela");
-    console.log("Loading - ocultar");
-
-    if (token === null) {
-      history.push("/login");
-    } 
-
     getTrips();
-  }, [history]);
+  });
 
   const getTrips = () => {
     axios

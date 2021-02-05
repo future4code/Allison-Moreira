@@ -2,6 +2,7 @@ import FAQ from "../../components/CardFaq/faq";
 import { FaqMain, Text } from "../../assets/styled/FaqStyled";
 
 function FaqPage() {
+  
   return (
     <FaqMain>
       <Text>Dicas e respostas da Equipe LabeX</Text>
