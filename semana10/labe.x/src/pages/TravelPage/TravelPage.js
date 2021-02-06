@@ -2,8 +2,7 @@ import { useGetRequestData } from "../../hookcs/useGetRequestData";
 import styled from "styled-components";
 import { useProtectedPage } from "../../hookcs/useProtectedPage";
 import { goToTravelDetailPage } from '../../routes/Coordinator'
-import { useState } from "react";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Test = styled.div`
   border: 1px solid red;
@@ -26,8 +25,7 @@ function TravelPage(id) {
       { getTrips.trips ? (
         getTrips.trips.map((p) => {
           return (
-            <Test>
-            {/* ID VER: <Link to={`/viagens/id/${p.id}`} > VER </Link> */}
+            <Test key={p.id}>
             <button onClick={() => goToTravelDetailPage(history, p.id)} >VER</button>
             <p>Nome: {p.name}</p>
           </Test>

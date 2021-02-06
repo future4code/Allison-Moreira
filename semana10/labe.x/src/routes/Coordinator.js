@@ -1,5 +1,4 @@
 import UseLogoutPages from '../hookcs/useLogout'
-import TravelPage from '../pages/TravelPage/TravelPage'
 
 export const goToHomePage = (history) => {
     history.push("/")
@@ -22,8 +21,7 @@ export const goToTravelPage = (history) => {
 }
 
 export const goToTravelDetailPage = (history, id) => {
-    console.log("ID: ",id)
-    localStorage.setItem("token", id)
+    // localStorage.setItem("token", id)
     history.push(`/viagens/id/${id}`)
     
 }

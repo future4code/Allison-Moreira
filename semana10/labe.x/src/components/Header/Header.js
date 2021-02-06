@@ -3,7 +3,6 @@ import {
   goToHomePage,
   goToLoginUserPage,
   goToTravelPage,
-  goToTravelDetailPage,
   goToFaqPage,
   goToRegisterUser,
   goToAdminHomePage,
@@ -37,13 +36,6 @@ function Header() {
           onClick={() => goToTravelPage(history)}
         >
           viagens
-        </Button>
-        <Button
-          pBottom="15"
-          pBottomActive="15"
-          onClick={() => goToTravelDetailPage(history)}
-        >
-          detalhes
         </Button>
 
         <Button

@@ -44,8 +44,6 @@ function FormLogin() {
       )
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        console.log("Ir para viagens");
-        console.log("Validar para não entrar no login de novo");
         history.push("/viagens");
       })
       .catch((err) => {
