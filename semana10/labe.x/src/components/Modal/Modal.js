@@ -1,4 +1,4 @@
-import { ModalMain } from "../../assets/styled/ModalStyled";
+import { ModalMain, Button } from "../../assets/styled/ModalStyled";
 import DataPersonalPage from "../../pages/DataPersonalPage/DataPersonalPage";
 
 export const Modal = ({ showModal, setShowModal, openModal }) => {
@@ -6,9 +6,11 @@ export const Modal = ({ showModal, setShowModal, openModal }) => {
     <>
       {showModal ? (
         <ModalMain>
-          <button onClick={() => openModal((prev) => !prev)}>&times;</button>
+          <Button 
+          position="absolute"
+          bgColor="transparent" color="red" onClick={() => openModal((prev) => !prev)}>&times; Fechar</Button>
           <DataPersonalPage />
-          <button onClick={() => openModal((prev) => !prev)}>Close</button>
+          <Button onClick={() => openModal((prev) => !prev)}>Fechar</Button>
         </ModalMain>
       ) : null}{" "}
     </>

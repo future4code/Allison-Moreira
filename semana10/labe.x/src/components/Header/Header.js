@@ -126,6 +126,15 @@ function Header() {
                 >
                   cadastre-se
                 </Button>
+
+                <Button
+                  pBottom="15"
+                  pBottomActive="15"
+                  onClick={() => goToAdminHomePage(history)}
+                >
+                  área administrativa
+                </Button>
+
               </>
             )}
           </>

@@ -1,6 +1,13 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import useForm from "../../hookcs/useForm";
+import {
+  PersonalMain,
+  Form,
+  Input,
+  Button,
+  Text,
+} from "../../assets/styled/DataPersonalStyled";
 
 function DataPersonalPage() {
   const [form, onChange] = useForm({
@@ -12,7 +19,7 @@ function DataPersonalPage() {
   });
 
   const pathParams = useParams();
-  
+
   const applyToTrip = (event) => {
     event.preventDefault();
     const body = {
@@ -20,7 +27,7 @@ function DataPersonalPage() {
       age: form.age,
       applicationText: form.commit,
       profession: form.profession,
-      country: form.country ,
+      country: form.country,
     };
 
     axios
@@ -29,7 +36,7 @@ function DataPersonalPage() {
         body
       )
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data)
       })
       .catch((err) => {
         console.log(err.message);
@@ -37,11 +44,11 @@ function DataPersonalPage() {
   };
 
   return (
-    <div>
-      <div>Dados Pessoais</div>
+    <PersonalMain>
+      <Text>Dados Pessoais</Text>
 
-      <form onSubmit={applyToTrip}>
-        <input
+      <Form onSubmit={applyToTrip}>
+        <Input
           name="name"
           value={form.name}
           onChange={onChange}
@@ -49,7 +56,7 @@ function DataPersonalPage() {
           required
           placeholder="Seu nome:"
         />
-        <input
+        <Input
           name="age"
           value={form.age}
           onChange={onChange}
@@ -57,7 +64,7 @@ function DataPersonalPage() {
           required
           placeholder="Sua idade: "
         />
-        <input
+        <Input
           name="commit"
           value={form.commit}
           onChange={onChange}
@@ -65,7 +72,7 @@ function DataPersonalPage() {
           required
           placeholder="Seu feedback: "
         />
-        <input
+        <Input
           name="profession"
           value={form.profession}
           onChange={onChange}
@@ -73,7 +80,7 @@ function DataPersonalPage() {
           required
           placeholder="Sua profissão: "
         />
-        <input
+        <Input
           name="country"
           value={form.country}
           onChange={onChange}
@@ -81,9 +88,9 @@ function DataPersonalPage() {
           required
           placeholder="Seu País: "
         />
-        <button>CADASTRAR DADOS</button>
-      </form>
-    </div>
+        <Button>cadastrar dados</Button>
+      </Form>
+    </PersonalMain>
   );
 }
 

@@ -6,7 +6,7 @@ import Loading from "../../components/Loading/Loading";
 import {
   TravelMain,
   TravelContainer,
-  TravelContent, Text
+  TravelContent, Text, Button,
 } from "../../assets/styled/TravelStyled";
 
 function TravelPage() {
@@ -29,12 +29,12 @@ function TravelPage() {
               <>
                 <TravelContainer key={p.id}>
                   <TravelContent >
-                    <button onClick={() => goToTravelDetailPage(history, p.id)} color="red">
+                    <Button onClick={() => goToTravelDetailPage(history, p.id)}>
                       + DETALHES
-                    </button>
-                    <Text>{p.planet}</Text>
-                    <Text>{p.name}</Text>
-                    <Text>{p.date}</Text>
+                    </Button>
+                    <Text size="28px" >{p.planet}</Text>
+                    <Text size="" >{p.name}</Text>
+                    <Text size="" >DATA: VIAGEM {p.date}</Text>
                   </TravelContent>
                 </TravelContainer>
               </>

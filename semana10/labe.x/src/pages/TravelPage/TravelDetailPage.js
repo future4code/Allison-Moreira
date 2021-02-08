@@ -7,9 +7,9 @@ import Loading from "../../components/Loading/Loading";
 import useModal from "../../hookcs/useModal";
 import { Modal } from "../../components/Modal/Modal";
 import {
-  TravelContainer,
-  TravelContent,
   TravelMain,
+  TravelContainer,
+  TravelContent, Text, Button,
 } from "../../assets/styled/TravelStyled";
 
 function TravelDetailPage() {
@@ -79,13 +79,13 @@ function TravelDetailPage() {
               VOLTAR A VIAGENS
             </button>
 
-            {tripDetail && <h2>{tripDetail.planet}</h2>}
-            {tripDetail && <p>{tripDetail.name}</p>}
-            {tripDetail && <p>{tripDetail.date}</p>}
-            {tripDetail && <p>{tripDetail.description}</p>}
-            {tripDetail && <p>{tripDetail.durantionDays}</p>}
+            {tripDetail && <Text margin="15px 5px" size="28px">{tripDetail.planet}</Text>}
+            {tripDetail && <Text margin="15px 5px" >{tripDetail.name}</Text>}
+            {tripDetail && <Text margin="15px 5px" >{tripDetail.date}</Text>}
+            {tripDetail && <Text margin="15px 5px" >{tripDetail.description}</Text>}
+            {tripDetail && <Text margin="15px 5px" >{tripDetail.durantionDays}</Text>}
 
-            <button onClick={openModal}>CANDIDATAR-SE A VAGA</button>
+            <Button onClick={openModal}>CANDIDATAR-SE A VAGA</Button>
 
             <Modal
               showModal={showModal}

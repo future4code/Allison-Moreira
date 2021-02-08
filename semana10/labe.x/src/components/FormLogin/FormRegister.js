@@ -15,6 +15,7 @@ function FormRegister() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [infoError, setInfoError] = useState("");
+
   const history = useHistory();
 
   const onChangeEmail = (event) => {
@@ -39,7 +40,6 @@ function FormRegister() {
         body
       )
       .then((res) => {
-        window.localStorage.setItem("token", res.data.token);
         history.push("/login");
       })
       .catch((err) => {
@@ -68,7 +68,17 @@ function FormRegister() {
         width="100vh"
         margin="auto"
       >
-        <button onClick={() => goToHomePage(history)}>VOLTAR A HOME</button>
+        <Button
+          bgColor="transparent"
+          bgHover="transparent"
+          padding="0"
+          color="black"
+          onClick={() => goToHomePage(history)}
+        >
+          {" "}
+          INICIO
+        </Button>
+        
         <Text fontSize="42" bold="bold" color="rgb(234,29,44)">
           Vamos viajar ao além ...
         </Text>
@@ -95,9 +105,8 @@ function FormRegister() {
           <Button>Cadastrar</Button>
         </form>
 
-        <Text bgColor="#000" color="red" padding="8px">
-          {" "}
-          Error: {infoError}
+        <Text border="1px solid #000" color="red" padding="2px">
+         {infoError}
         </Text>
 
         <Text>

@@ -22,10 +22,9 @@ export const Text = styled.p`
   font-size: ${(props) => props.fontSize}px;
   font-weight: ${(props) => props.bold || "none"};
   color: ${(props) => props.color || "#717171"};
-  background-color: ${(props) => props.bgColor || "transparent"};
   border-radius: 40px;
   padding: ${(props) => props.padding};
-  margin: 20px 0;
+  margin: 10px 0;
 `;
 
 export const Input = styled.input`

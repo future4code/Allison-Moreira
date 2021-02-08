@@ -1,17 +1,19 @@
-import useForm from './useForm';
+import useForm from "./useForm";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useProtectedPage } from "./useProtectedPage";
+import UseLogoutPages from "./useLogout";
 
 export default function useLogin(byProtected) {
-    
-    const [infoError, setInfoError] = useState("");
-    const [form, onChange] = useForm({})
-    
-    const history = useHistory()
-    
-  const Login = (event) => {
+  const [infoError, setInfoError] = useState("");
+  const [form, onChange] = useForm({});
+
+  const history = useHistory();
+
+  const Login = (event, Route) => {
     event.preventDefault();
+    // useProtectedPage(Route)
 
     const body = {
       email: form.email,
@@ -25,7 +27,12 @@ export default function useLogin(byProtected) {
       )
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        history.push("/");
+        if (form.email === "astrobot.admin@gmail.com" || form.email === "labenu.admin@gmail.com") {
+          history.push("/Admin/Home");
+        } else {
+          history.push("/");
+        }
+
       })
       .catch((err) => {
         if (form.email === "" && form.password === "") {
@@ -46,6 +53,5 @@ export default function useLogin(byProtected) {
       });
   };
 
-  return [infoError, onChange, form, Login]
-
+  return [infoError, onChange, form, Login];
 }

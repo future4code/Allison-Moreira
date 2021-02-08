@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { useProtectedPage } from "../../../hookcs/useProtectedPage";
 // import { useHistory } from "react-router-dom";
 
 function AdminCreateTripPage() {
   const [infoError, setInfoError] = useState("");
   // const history = useHistory();
-
+  useProtectedPage('/Admin')
   const CreateTrip = () => {
     const body = {
       name: "Ano novo em Mercúrio",
