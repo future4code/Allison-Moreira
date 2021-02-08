@@ -23,7 +23,7 @@ function Header() {
   return (
     <HeaderStyled>
       <HeaderDiv flex="">
-        <img alt="logo" onClick={() => goToHomePage(history)} />
+        <Button onClick={() => goToHomePage(history)}> LABE X</Button>
       </HeaderDiv>
 
       <HeaderDiv flex="">

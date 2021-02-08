@@ -18,7 +18,7 @@ function FormLogin() {
 
   return (
     <FormMain>
-      <FormDiv width="110vh">Logo</FormDiv>
+      <FormDiv width="110vh">labe x</FormDiv>
       <FormDiv
         shadow="0px 1px 4px rgb(0 0 0 / 5%), 0px 4px 16px rgb(0 0 0 / 6%)"
         width="80vh"
