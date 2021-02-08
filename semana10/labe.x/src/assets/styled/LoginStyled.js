@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FormMain = styled.div`
   height: 100vh;
   display: flex;
+  margin: ${props=>props.margin};
 `;
 export const FormDiv = styled.div`
   margin: auto;
@@ -38,17 +39,17 @@ export const Input = styled.input`
 export const Button = styled.button`
   width: 100%;
   margin: 5px;
-  padding: 15px;
+  padding: ${props=>props.padding || '15px'};
   text-transform: uppercase;
   outline: none;
   border: none;
   text-decoration: none;
   cursor: pointer;
-  background-color: rgb(234, 29, 44);
-  color: white;
+  background-color: ${props=>props.bgColor || 'rgb(234, 29, 44)'};
+  color: ${props=>props.color || 'white'};
   font-weight: bold;
 
   :hover {
-    background-color: #9a0712;
+    background-color: ${props=>props.bgHover || '#9a0712'};
   }
 `;

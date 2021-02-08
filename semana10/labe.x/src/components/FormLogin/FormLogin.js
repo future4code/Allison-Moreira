@@ -1,69 +1,16 @@
-import {
-  FormMain,
-  FormDiv,
-  Text,
-  Input,
-  Button,
-} from "../../assets/styled/LoginStyled";
+import { FormMain, FormDiv, Text, Input, Button } from "../../assets/styled/LoginStyled";
 import { useHistory } from "react-router-dom";
 import { goToHomePage, goToRegisterUser } from "../../routes/Coordinator";
-
-import axios from "axios";
-import { useState } from "react";
 import { useProtectedPage } from '../../hookcs/useProtectedPage'
+import useLogin from "../../hookcs/useLogin";
 
 function FormLogin() {
 
-  useProtectedPage("/")
+  useProtectedPage('/viagens')
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [infoError, setInfoError] = useState("");
-  const history = useHistory();
-
-  const onChangeEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const onChangePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const Login = (event) => {
-    event.preventDefault();
-
-    const body = {
-      email: email,
-      password: password,
-    };
-
-    axios
-      .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/allison-marques/login",
-        body
-      )
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        history.push("/viagens");
-      })
-      .catch((err) => {
-        if (email === "" && password === "") {
-          setInfoError(
-            "Ops! os campos de Email e Senha estão vazios, preencha para continuar "
-          );
-        } else if (password === "") {
-          setInfoError(
-            "Campo de SENHA está vazio, preencha este campo para continuar."
-          );
-        } else if (email === "") {
-          setInfoError(
-            "Campo E-MAIL está vazio, preencha este campo para continuar."
-          );
-        } else {
-          setInfoError(err.response.data.message);
-        }
-      });
-  };
+  const history = useHistory()
+  const [infoError, onChange, form, Login] = useLogin()
+  
 
   return (
     <FormMain>
@@ -72,8 +19,8 @@ function FormLogin() {
         shadow="0px 1px 4px rgb(0 0 0 / 5%), 0px 4px 16px rgb(0 0 0 / 6%)"
         width="80vh"
       >
-        <button onClick={() => goToHomePage(history)}>VOLTAR A HOME</button>
-        <Text fontSize="42" bold="bold" color="rgb(234,29,44)">
+        <Button bgColor="transparent" bgHover="transparent" padding="0" color="black" onClick={() => goToHomePage(history)}>  HOME</Button> 
+      <Text fontSize="42" bold="bold" color="rgb(234,29,44)">
           Falta pouco para viajar ao espaço!
         </Text>
         <Text fontSize="18">Informe o seu e-mail e senha para continuar</Text>
@@ -83,17 +30,19 @@ function FormLogin() {
             required
             placeholder="E-mail"
             type="email"
-            value={email}
-            onChange={onChangeEmail}
+            name="email"
+            value={form.email}
+            onChange={onChange}
           />
           <Input
             required
             pattern="[A-Za-z\d]{6,}$"
             title="Ops! Algo de errado!"
             placeholder="Senha"
+            name="password"
             type="password"
-            value={password}
-            onChange={onChangePassword}
+            value={form.password}
+            onChange={onChange}
           />
 
           <Button>ENTRAR</Button>

@@ -1,10 +1,10 @@
 
 
-function UseLogoutPages(history) {
+function UseLogoutPages(history, value) {
 
     const token = localStorage.getItem("token")
     localStorage.clear(token)
-    history.push("/login")
+    history.push(value)
    
 }
 

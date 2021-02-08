@@ -8,6 +8,10 @@ export const goToFaqPage = (history) => {
     history.push("/duvidas-frequentes")
 }
 
+export const goToDataPersonal = (history) => {
+    history.push("/dados-pessoais")
+}
+
 export const goToRegisterUser = (history) => {
     history.push("/cadastro")
 }
@@ -38,7 +42,6 @@ export const goToAdminCreateTrip = (history) => {
     history.push("/Admin/CreateTrip")
 }
 
-export const goToLogout = (history) => {
-    UseLogoutPages(history)
-    history.push('/login')
+export const goToLogout = (history, value) => {
+    UseLogoutPages(history, value)
 }

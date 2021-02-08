@@ -4,7 +4,6 @@ import App from "../pages/HomePage/HomePage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import TravelPage from "../pages/TravelPage/TravelPage";
 import RegisterUserPage from "../pages/RegisterUserPage/RegisterUserPage";
-import InscriptionTravelPage from "../pages/InscriptionTravelPage/InscriptionTravelPage";
 import FaqPage from "../pages/FaqPage/FaqPage";
 import LoginPage from "../pages/LoginUserPage/LoginUserPage";
 import Header from "../components/Header/Header";
@@ -12,6 +11,7 @@ import HeaderAdmin from "../components/Header/HeaderAdmin";
 import AdminHomePage from "../pages/Admin/HomePage/AdminHomePage";
 import AdminCreateTripPage from "../pages/Admin/CreateTripPage/CreateTripPage";
 import TravelDetailPage from "../pages/TravelPage/TravelDetailPage";
+import DataPersonalPage from "../pages/DataPersonalPage/DataPersonalPage";
 
 function Router() {
   return (
@@ -36,12 +36,13 @@ function Router() {
           <TravelDetailPage />
         </Route>
 
-        <Route exact path="/cadastro">
-          <RegisterUserPage />
+        <Route exact path="/dados-pessoais">
+          <Header />
+          <DataPersonalPage />
         </Route>
 
-        <Route exact path="/inscreva-se">
-          <InscriptionTravelPage />
+        <Route exact path="/cadastro">
+          <RegisterUserPage />
         </Route>
 
         <Route exact path="/duvidas-frequentes">
@@ -56,8 +57,12 @@ function Router() {
         {/* PARTE ADMINISTRATIVA */}
 
         <Route exact path="/Admin/">
-          <HeaderAdmin />
           <AdminHomePage />
+        </Route>
+
+        <Route exact path="/Admin/Home">
+          <HeaderAdmin />
+          <AdminCreateTripPage />
         </Route>
 
         <Route exact path="/Admin/CreateTrip">

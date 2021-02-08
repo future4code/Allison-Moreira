@@ -3,6 +3,8 @@ import {
   goToHomePage,
   goToAdminCreateTrip,
   goToAdminHomePage,
+  goToLoginUserPage,
+  goToLogout,
 } from "../../routes/Coordinator";
 import {
   HeaderStyled,
@@ -24,7 +26,14 @@ function HeaderAdmin() {
           pBottomActive="15"
           onClick={() => goToHomePage(history)}
         >
-          INICIO Cliente
+          SITE
+        </Button>
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToAdminHomePage(history)}
+        >
+          INICIO
         </Button>
         <Button
           pBottom="15"
@@ -32,6 +41,13 @@ function HeaderAdmin() {
           onClick={() => goToAdminCreateTrip(history)}
         >
           CRIAR VIAGENS
+        </Button>
+        <Button
+          pBottom="15"
+          pBottomActive="15"
+          onClick={() => goToLogout(history, '/Admin')}
+        >
+          SAIR
         </Button>
 
       </HeaderDiv>

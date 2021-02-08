@@ -1,24 +1,15 @@
 import { FormMain, FormDiv, Text, Input, Button } from "../../../assets/styled/LoginStyled";
-import { useHistory } from "react-router-dom";
-import { goToHomePage } from "../../../routes/Coordinator";
-import useLogin from "../../../hookcs/useLogin";
 
-
-function AdminHomePage() {
-
-  const history = useHistory()
-  const [infoError, onChange, form, Login] = useLogin()
-  
-  return (
-
-    <FormMain margin="0 33%">
+function useFormPage() {
+    return (
+        <FormMain margin="0 33%">
     <FormDiv
       shadow="0px 1px 4px rgb(0 0 0 / 5%), 0px 4px 16px rgb(0 0 0 / 6%)"
       width="80vh"
     >
       <Button bgColor="transparent" bgHover="transparent" padding="0" color="black" onClick={() => goToHomePage(history)}>  HOME</Button> 
       <Text fontSize="42" bold="bold" color="rgb(234,29,44)">
-         ÁREA ADMINISTRATIVA
+        {Title}
       </Text>
       <Text fontSize="18">Informe o seu e-mail e senha para continuar</Text>
 
@@ -52,6 +43,5 @@ function AdminHomePage() {
       
     </FormDiv>
   </FormMain>
-  );
+    )
 }
-export default AdminHomePage

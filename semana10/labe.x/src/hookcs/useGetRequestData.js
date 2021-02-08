@@ -8,8 +8,6 @@ export function useGetRequestData(url, initialState) {
     axios
         .get(url)
         .then((res) => {
-            // console.log("REQUEST ID TRIPS", res.data.trips)
-            // console.log("REQUEST DATA", res.data)
             setData(res.data);
         });
     }, [url]);

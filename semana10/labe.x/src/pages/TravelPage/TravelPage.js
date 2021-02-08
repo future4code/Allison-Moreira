@@ -1,17 +1,18 @@
 import { useGetRequestData } from "../../hookcs/useGetRequestData";
-import styled from "styled-components";
 import { useProtectedPage } from "../../hookcs/useProtectedPage";
-import { goToTravelDetailPage } from '../../routes/Coordinator'
-import { useHistory } from 'react-router-dom'
+import { goToTravelDetailPage } from "../../routes/Coordinator";
+import { useHistory } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
+import {
+  TravelMain,
+  TravelContainer,
+  TravelContent, Text
+} from "../../assets/styled/TravelStyled";
 
-const Test = styled.div`
-  border: 1px solid red;
-`;
-
-function TravelPage(id) {
+function TravelPage() {
   useProtectedPage();
 
-  const history = useHistory()
+  const history = useHistory();
 
   const getTrips = useGetRequestData(
     "https://us-central1-labenu-apis.cloudfunctions.net/labeX/allison-marques/trips",
@@ -20,21 +21,29 @@ function TravelPage(id) {
 
   return (
     <div>
-      <h1>Viagens</h1>
-
-      { getTrips.trips ? (
-        getTrips.trips.map((p) => {
-          return (
-            <Test key={p.id}>
-            <button onClick={() => goToTravelDetailPage(history, p.id)} >VER</button>
-            <p>Nome: {p.name}</p>
-          </Test>
-          );
-        })
-      ) : (
-        <p>Carregando...</p>
-      )}
-
+      <TravelMain columns="repeat(1, 1fr)" padding="30px 0" >{getTrips.trips ? <h1>Viagens</h1> : <Loading />}</TravelMain>
+      <TravelMain columns="repeat(4, 1fr)" padding="0 20" >
+        {getTrips.trips ? (
+          getTrips.trips.map((p) => {
+            return (
+              <>
+                <TravelContainer key={p.id}>
+                  <TravelContent >
+                    <button onClick={() => goToTravelDetailPage(history, p.id)} color="red">
+                      + DETALHES
+                    </button>
+                    <Text>{p.planet}</Text>
+                    <Text>{p.name}</Text>
+                    <Text>{p.date}</Text>
+                  </TravelContent>
+                </TravelContainer>
+              </>
+            );
+          })
+        ) : (
+          <Loading />
+        )}
+      </TravelMain>
     </div>
   );
 }
