@@ -25,9 +25,8 @@ export const goToTravelPage = (history) => {
 }
 
 export const goToTravelDetailPage = (history, id) => {
-    // localStorage.setItem("token", id)
     history.push(`/viagens/id/${id}`)
-    
+
 }
 
 export const goToLoginUserPage = (history) => {
