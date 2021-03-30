@@ -26,13 +26,16 @@ export default function useLogin(byProtected) {
         body
       )
       .then((res) => {
+        console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
-        if (form.email === "astrobot.admin@gmail.com" || form.email === "labenu.admin@gmail.com") {
+        if (
+          form.email === "astrobot.admin@gmail.com" ||
+          form.email === "labenu.admin@gmail.com"
+        ) {
           history.push("/Admin/Home");
         } else {
           history.push("/");
         }
-
       })
       .catch((err) => {
         if (form.email === "" && form.password === "") {
